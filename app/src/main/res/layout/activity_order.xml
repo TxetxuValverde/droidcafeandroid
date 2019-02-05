@@ -21,10 +21,10 @@
         android:id="@+id/name_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="@dimen/margin_short"
+        android:layout_marginLeft="@dimen/margin_short"
+        android:layout_marginEnd="@dimen/margin_short"
+        android:layout_marginRight="@dimen/margin_short"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/enter_name_hint"
@@ -43,4 +43,160 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_label"
         />
+
+    <EditText
+        android:id="@+id/address_text"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_short"
+        android:layout_marginLeft="@dimen/margin_short"
+        android:ems="10"
+        android:hint="@string/enter_address_hint"
+        android:inputType="textMultiLine"
+        app:layout_constraintBaseline_toBaselineOf="@id/address_label"
+        app:layout_constraintStart_toEndOf="@id/address_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/phone_label"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="@dimen/margin_wide"
+        android:layout_marginLeft="@dimen/margin_wide"
+        android:layout_marginTop="@dimen/margin_wide"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address_text"
+
+        android:text="@string/phone_label_text"/>
+
+    <EditText
+        android:id="@+id/phone_text"
+
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="@dimen/margin_short"
+        android:layout_marginLeft="@dimen/margin_short"
+
+        android:ems="10"
+
+        android:hint="@string/enter_phone"
+        android:inputType="phone"
+
+        app:layout_constraintBaseline_toBaselineOf="@id/phone_label"
+        app:layout_constraintStart_toEndOf="@id/phone_label"
+
+        />
+
+    <Spinner
+        android:id="@+id/label_spinner"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="@dimen/margin_wide"
+        android:layout_marginRight="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_short"
+        android:layout_marginLeft="@dimen/margin_short"
+        android:layout_marginTop="@dimen/margin_wide"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/phone_text"
+        app:layout_constraintTop_toBottomOf="@id/address_text"
+        />
+
+    <TextView
+        android:id="@+id/note_label"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="@dimen/margin_wide"
+        android:layout_marginLeft="@dimen/margin_wide"
+        android:layout_marginTop="@dimen/margin_wide"
+
+        android:text="@string/note_label_text"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phone_label"
+        />
+
+    <EditText
+        android:id="@+id/note_text"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="@dimen/margin_short"
+        android:layout_marginLeft="@dimen/margin_short"
+
+        android:ems="10"
+
+        android:hint="@string/enter_note_hint"
+
+        android:inputType="textMultiLine|textCapSentences"
+
+        app:layout_constraintBaseline_toBaselineOf="@id/note_label"
+        app:layout_constraintStart_toEndOf="@id/note_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <TextView
+        android:id="@+id/delivery_label"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="@dimen/margin_wide"
+        android:layout_marginLeft="@dimen/margin_wide"
+        android:layout_marginTop="@dimen/margin_wide"
+
+        android:text="Choose a delivery method: "
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note_text"
+        />
+
+    <RadioGroup
+        android:id="@+id/delivery_options"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_wide"
+        android:layout_marginStart="@dimen/margin_wide"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delivery_label"
+        >
+
+        <RadioButton
+            android:id="@+id/sameday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+
+            android:text="@string/same_day_messenger_service"/>
+        <RadioButton
+            android:id="@+id/nextday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+
+            android:text="@string/next_day_ground_delivery"/>
+        <RadioButton
+            android:id="@+id/pickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+
+            android:text="@string/pick_up"/>
+
+    </RadioGroup>
+
+
+
 </android.support.constraint.ConstraintLayout>
